@@ -1,82 +1,160 @@
+body {
+  font-family: Arial;
+  background-image: url("images/hound.jpg");
+  /* ADD IMAGE */
+  background-size: cover;
+  text-align: center;
+}
 
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: helvetica, arial, sans-serif;
-    margin: 25px;
-  }
-  
-  main {
-    display:block;
-    height:175px;
-  }
-  
-  header {
-    border-bottom: 1px solid black;
-  }
-  
-  h1 {
-    font-weight: bold;
-    color: #000;
-  }
-  
-  .bold {
-    font-weight: bold;
-  }
-  
-  p {
-    max-width: 600px;
-  }
-  
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  footer {
-    padding-top: 25px;
-    border-top: 1px solid black;
-  }
-  
-  footer a {
-    float:left;
-    margin:5px;
-  }
-  
-  .pet-image {
-    height:250px;
-  }
-  
-  .dashboard div {
-    display:block;
-  }
-  
-  .pet-image-container {
-    float:left;
-    padding:10px;
-  }
-  
-  .dashboard {
-    float:left;
-    padding:20px;
-  }
-  
-  .button-container {
-    margin-top:20px;
-  }
-  
-  .button-container button {
-    width: 100px;
-      margin-right: 10px;
-      text-align: center;
-      display: inline-block;
-      float: left;
-    font-size:15px;
-    background-color: #1e2835;
-    border-color: #404853;
-    cursor:pointer;
-    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
-    color: #fafafa;
-  }
+main {
+  display: flex;              /* puts items side-by-side */
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* align vertically */
+  gap: 50px;                /* space between pet and dashboard */
+  margin-top: 40px;
+}
+
+/* INTRO SCREEN */
+#intro-screen {
+  margin-top: 100px;
+}
+
+#pet-name-input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#start-game {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* PET IMAGE */
+.pet-image {
+  height: 250px;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.pet-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* DASHBOARD */
+.dashboard {
+  flex: 1;
+  text-align: left;
+  background-color: rgba(255,255,255,0.85);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* BUTTONS */
+.button-container button {
+  margin: 5px;
+  padding: 10px;
+  background-color: #1e2835;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  /*min-height: 220px; /* reserves space so layout never shifts DELETE  ------------------------ */
+}
+
+.button-container button:hover {
+  background-color: #3a4a63;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* PET MESSAGE */
+/*#pet-message {
+  position: absolute;
+  top: 100%;            /* <-- THIS makes it start under buttons */
+  /*left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  margin-top: 10px;
+
+  display: none;
+  padding: 10px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+
+  z-index: 10;
+}*/
+/*#pet-message {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  text-align: center;
+
+  background: rgba(255,255,255,0.9);
+  padding: 10px;
+  border-radius: 10px;
+
+  z-index: 10;
+}*/
+#pet-message {
+  width: 100%;
+  margin-top: 10px;
+
+  display: none;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.85);
+  border-radius: 10px;
+
+  font-size: 16px;
+}
+/*#pet-message {
+  position: absolute;
+  right: 20px;
+  top: 120px;
+}*/
+
+/* BARS */
+.bar {
+  width: 200px;
+  height: 20px;
+  background-color: #ddd;
+  margin: 5px 0 15px ; /* pushes bars to the right */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#health-bar {
+  height: 100%;
+  width: 50%;
+  background-color: green;
+}
+
+#happiness-bar {
+  height: 100%;
+  width: 50%;
+  background-color: yellow;
+}
+
+#hunger-bar {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+}
+
+/* PET ANIMATION STATES */
+.pet-image {
+  /*transition: transform 0.2s, filter 0.2s;*/
+  transition: transform 0.25s ease, filter 0.25s ease;
+}

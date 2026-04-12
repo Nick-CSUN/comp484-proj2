@@ -1,48 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Your Giga Pet</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+
+<head>
+  <title>Your Giga Pet Game</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- INTRO SCREEN -->
+  <div id="intro-screen">
+    <h1>Welcome to Giga Pet!</h1>
+    <input type="text" id="pet-name-input" placeholder="Enter your pet's name">
+    <button id="start-game">Start Game</button>
+  </div>
+
+  <!-- MAIN GAME -->
+  <div id="game" style="display:none;">
+
     <header>
-      <h1>
-        This is your Giga Pet
-      </h1>
+      <h1>Your Giga Pet</h1>
     </header>
 
     <main>
       <section class="pet-image-container">
-         <!-- Replace pet image with your own pet image -->
         <img class="pet-image" src="">
       </section>
+
       <section class="dashboard">
         <div>Name: <strong><span class="name"></span></strong></div>
-        <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
-        <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
+        <div>
+          Health: <strong><span class="health"></span></strong>
+        </div>
+        <div class="bar">
+          <div id="health-bar"></div>
+        </div>
+        <div>
+          Happiness: <strong><span class="happiness"></span></strong>
+        </div>
+        <div class="bar">
+          <div id="happiness-bar"></div>
+        </div>
+        <div>
+          Hunger: <strong><span class="hunger"></span></strong>
+        </div>
+        <div class="bar">
+          <div id="hunger-bar"></div>
+        </div>
+
+        <!-- Notification -->
+        <!--<div id="pet-message"></div>-->
+
         <div class="button-container">
-          <button class="treat-button">
-            Treat
-          </button>
-          <button class="play-button">
-            Play
-          </button>
-          <button class="exercise-button">
-            Exercise
-          </button>
+          <div class="buttons"></div>
+            <button class="treat-button">Treat</button>
+            <button class="play-button">Play</button>
+            <button class="exercise-button">Exercise</button>
+            <button class="sleep-button">Sleep</button> <!-- NEW BUTTON -->
+        </div>
+
+          <div id="pet-message"></div>
         </div>
       </section>
     </main>
 
-    <!-- Your web-app is https, so your scripts need to be too -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
-  </body>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
 </html>
