@@ -1,7 +1,7 @@
 $(function () {
 
   const petImages = ["images/charmander.png", "images/Bulbasaur.png", "images/squirtle.png"];
-  const happySound = new Audio("happy.mp3");
+  //const happySound = new Audio("happy.mp3");
 
   var pet_info = {
     name: "",
@@ -48,10 +48,10 @@ $(function () {
     pet_info.health -= 5;
     pet_info.hunger += 10;
 
-    happySound.play();
+    //happySound.play();
     showMessage("Yum! 😋");
     animatePet("eat");
-    flashColor("rgba(0, 255, 0, 0.3)");
+    flashColor("rgba(0, 255, 0, 0.2)");
 
     checkAndUpdatePetInfoInHtml();
   }
@@ -63,7 +63,7 @@ $(function () {
 
     showMessage("That was fun! 🎾");
     animatePet("play");
-    flashColor("rgba(0, 0, 255, 0.3)");
+    flashColor("rgba(0, 0, 255, 0.2)");
 
     checkAndUpdatePetInfoInHtml();
   }
@@ -75,7 +75,7 @@ $(function () {
 
     showMessage("So tired... 😓");
     animatePet("exercise");
-    flashColor("rgba(255, 0, 0, 0.3)");
+    flashColor("rgba(255, 0, 0, 0.2)");
 
     checkAndUpdatePetInfoInHtml();
   }
@@ -87,7 +87,7 @@ $(function () {
 
     showMessage("Zzz 😴");
     animatePet("sleep");
-    flashColor("rgba(128, 0, 128, 0.3)");
+    flashColor("rgba(128, 0, 128, 0.2)");
 
     checkAndUpdatePetInfoInHtml();
   }
@@ -153,12 +153,14 @@ $(function () {
 
   // VISUAL EFFECT using .css()
   function flashColor(color) {
-    $("body").css("background-color", color);
+  const overlay = $("#flash-overlay");
 
-    setTimeout(function () {
-      $("body").css("background-color", "");
-    }, 700);
-  }
+  overlay.css("background-color", color);
+
+  setTimeout(function () {
+    overlay.css("background-color", "transparent");
+  }, 200);
+}
 
   function animatePet(action) {
 

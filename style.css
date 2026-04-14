@@ -1,27 +1,67 @@
 body {
   font-family: Arial;
-  background-image: url("images/hound.jpg");
-  /* ADD IMAGE */
+  background-image: url("images/Professor Oaks Lab.jpg");
   background-size: cover;
   text-align: center;
 }
 
 main {
-  display: flex;              /* puts items side-by-side */
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* align vertically */
-  gap: 50px;                /* space between pet and dashboard */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
   margin-top: 40px;
+}
+
+header {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.9);
+  padding: 5px 20px;
+  border-radius: 15px;
+  border: 2px solid #333;
+  margin-bottom: 10px;
+}
+
+.title-box {
+  display: block;
+  background-color: rgba(255,255,255,0.9);
+  padding: 20px 40px;
+  border-radius: 20px;
+  border: 2px solid #333;
+  margin-bottom: 20px;
+}
+
+.title-box, header {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: transparent;
+  pointer-events: none;
+
+  z-index: 999;
 }
 
 /* INTRO SCREEN */
 #intro-screen {
-  margin-top: 100px;
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center horizontally */
+  justify-content: center;  /* center vertically */
+  height: 100vh;            /* full screen height */
+  text-align: center;
 }
 
 #pet-name-input {
   padding: 10px;
   font-size: 16px;
+  margin-bottom: 15px;
 }
 
 #start-game {
@@ -41,6 +81,7 @@ main {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 /* DASHBOARD */
@@ -155,6 +196,5 @@ main {
 
 /* PET ANIMATION STATES */
 .pet-image {
-  /*transition: transform 0.2s, filter 0.2s;*/
   transition: transform 0.25s ease, filter 0.25s ease;
 }
