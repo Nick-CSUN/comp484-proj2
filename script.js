@@ -2,7 +2,7 @@ $(function () {
   // Runs when the page (DOM) is fully loaded
 
   // Array of possible pet images (randomly selected on start)
-  const petImages = ["images/charmander.png", "images/Bulbasaur.png", "images/squirtle.png"];
+  const petImages = ["images/charmander.png", "images/bulbasaur.png", "images/squirtle.png"];
 
   // Sound effects for each action
   const playSound = new Audio("effects/play.mp3");
