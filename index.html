@@ -8,10 +8,10 @@
 </head>
 
 <body>
-
+  <!-- Overlay used for screen flash effects -->
   <div id="flash-overlay"></div>
-  
-  <!-- INTRO SCREEN -->
+
+  <!-- INTRO SCREEN (shown first) -->
   <div id="intro-screen">
     <div class="title-box">
       <h1>Welcome to Giga Pet!</h1>
@@ -20,7 +20,7 @@
     <button id="start-game">Start Game</button>
   </div>
 
-  <!-- MAIN GAME -->
+  <!-- MAIN GAME (hidden until start button is clicked) -->
   <div id="game" style="display:none;">
 
     <header>
@@ -53,9 +53,7 @@
           <div id="hunger-bar"></div>
         </div>
 
-        <!-- Notification -->
-        <!--<div id="pet-message"></div>-->
-
+        <!-- Action buttons -->
         <div class="button-container">
           <div class="buttons"></div>
           <button class="treat-button">Treat</button>
@@ -64,6 +62,7 @@
           <button class="sleep-button">Sleep</button> <!-- NEW BUTTON -->
         </div>
 
+        <!-- Message that appears after actions -->
         <div id="pet-message"></div>
   </div>
   </section>
